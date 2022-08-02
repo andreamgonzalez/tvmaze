@@ -15,7 +15,7 @@ const $searchForm = $("#search-form");
 async function getShowsByTerm(term) {
   // ADD: Remove placeholder & make request to TVMaze search shows API.
   const search = term;
-  const shows = await axios.get('http://api.tvmaze.com/search/shows', {parameters: {q:search}});
+  const shows = await axios.get(`http://api.tvmaze.com/search/shows?q=${term}`);
  console.log(shows);
  for(let show of shows){
   console.log(show.data);
